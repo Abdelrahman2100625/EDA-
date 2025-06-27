@@ -7,6 +7,7 @@ WHERE TABLE_NAME = 'football player 24/25';
 
 select * from [football player 24/25];
 
+-------------------------------------------------------------------------------------------------------------
 --  1. top player building attack in each league
 with Ranked as (
 	select
@@ -22,8 +23,8 @@ select player , comp , progression
 from ranked
 where Playerrank = 1 
 order by progression desc;
---------------------------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------------------------
 --  2.  Who is the top goal scorer in each team?
 
 with scorer as (
@@ -38,7 +39,8 @@ select player , team , goals , rn
 from scorer
 where rn = 1
 order by goals desc;
-----------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
 -- 3.  Which 5 teams have the highest total number of goals scored by their players?
 
 select top(5) Squad as team , sum(gls) as goals 
